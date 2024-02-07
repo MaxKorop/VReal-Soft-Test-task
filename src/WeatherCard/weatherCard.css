@@ -1,0 +1,126 @@
+.weather-card {
+    width: 20rem;
+    height: 15rem;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 5px;
+    font-family: 'Jost';
+    position: relative;
+}
+
+.delete-city-card {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    color: #C5C5C5;
+    cursor: pointer;
+}
+
+.delete-city-card-rtl {
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    color: #C5C5C5;
+    cursor: pointer;
+}
+
+.weather-forecast {
+    margin-left: 15px;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 10px 0 10px;
+}
+
+.city-date {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+}
+
+.icon-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.main-name {
+    font-weight: 400;
+    color: #C5C5C5;
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+}
+
+.temp {
+    margin-left: 15px;
+}
+
+.temp-now {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.units {
+    display: flex;
+    width: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.feels-like {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.feels-like>span {
+    font-size: 13px;
+    color: #C5C5C5;
+    font-weight: 400;
+}
+
+.feels-like-temp {
+    font-weight: 600;
+    margin-right: auto;
+    margin-left: 3px;
+}
+
+.wind-humidity-pressure {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 20px;
+}
+
+.wind-humidity-pressure-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.wind-humidity-pressure-details>span {
+    margin-left: 3px;
+    font-weight: 600;
+}
+
+.cold {
+    color: #459DE9;
+}
+
+.warm {
+    color: #FFA25B;
+}

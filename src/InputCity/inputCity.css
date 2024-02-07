@@ -1,0 +1,121 @@
+.input-city {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Jost';
+}
+
+.input-city-name {
+    border: none;
+    padding-left: 10px;
+    box-shadow: 0px 3px 6px #00000029;
+    width: 569px;
+    height: 40px;
+    border-radius: 5px;
+    font-family: 'Jost';
+}
+
+.input-city-name:focus{
+    outline: none;
+}
+
+.input-city-add {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #459DE9;
+    border: none;
+    height: 40px;
+    width: 112px;
+    border-radius: 5px;
+}
+
+.input-city-error {
+    color: red;
+    margin: 10px;
+}
+
+.input-city-autocomplete{
+    z-index: 10;
+    display: flex;
+    width: 700px;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px #00000029;
+    margin-top: 10px; 
+}
+
+.input-city-autocomplete-item {
+    width: 100%;
+    margin: 0;
+    padding: 5px 0;
+    display: flex;
+    align-items: flex-start;
+    /*margin: 10px auto 10px 5px;*/
+}
+
+.input-city-autocomplete-item:hover {
+    background-color: #F2F2F2;
+}
+
+@media screen and (max-width: 730px) {
+    .input-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .input-city-add {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 10px;
+        width: 570px;
+    }
+    
+    .input-city-name {
+        width: 558px;
+    }
+
+    .input-city-autocomplete {
+        margin-top: -10px;
+        width: 570px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .input-city-add {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 10px;
+        width: 370px;
+    }
+    
+    .input-city-name {
+        width: 358px;
+    }
+
+    .input-city-autocomplete {
+        margin-top: -10px;
+        width: 370px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .input-city-add {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 10px;
+        width: 320px;
+    }
+    
+    .input-city-name {
+        width: 308px;
+    }
+
+    .input-city-autocomplete {
+        margin-top: -10px;
+        width: 320px;
+    }
+}
