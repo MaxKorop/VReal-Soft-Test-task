@@ -4,7 +4,6 @@ export class WeatherStore {
     constructor() {
         this._cities = JSON.parse(localStorage.getItem('cities')) || [];
         this._error = {};
-        this._errorCities = [];
         this._choosenLanguage = '';
         makeAutoObservable(this);
     }
@@ -39,17 +38,5 @@ export class WeatherStore {
 
     setChoosenLanguage(value) {
         this._choosenLanguage = value;
-    }
-
-    get errorCities() {
-        return this._errorCities;
-    }
-
-    addToErrorCities(city) {
-        this._errorCities.push(city);
-    }
-
-    errorCitiesIncludes(city) {
-        return JSON.parse(JSON.stringify(this._errorCities)).some(errorCity => errorCity === city);
     }
 }

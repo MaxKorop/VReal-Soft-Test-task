@@ -12,6 +12,7 @@ const InputCity = observer(() => {
     const addRef = useRef();
     const [autocompleteRes, setAutocompleteRes] = useState([]);
 
+    //Add to cities array if input value
     const addCity = () => {
         if (inputRef.current.value) {
             store.addToCities(inputRef.current.value);
@@ -20,10 +21,11 @@ const InputCity = observer(() => {
         }
     }
 
+    //Request to API that autocomplete city names
     const autocomplete = async () => {
         store.setError({});
         if (inputRef.current.value) {
-            const { data } = await axios.get(`http://api.geonames.org/searchJSON?name_startsWith=${inputRef.current.value}&lang=ua&featureClass=P&maxRows=5&username=maxkorop`);
+            const { data } = await axios.get(`http://api.geonames.org/searchJSON?name_startsWith=${inputRef.current.value}&lang=${store.choosenLanguage}&featureClass=P&maxRows=5&username=maxkorop`);
             setAutocompleteRes(data.geonames.map(geo => `${geo.toponymName}, ${geo.countryCode}`));
         } else setAutocompleteRes([]);
     }

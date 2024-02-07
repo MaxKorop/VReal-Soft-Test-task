@@ -17,42 +17,45 @@ const WeatherCard = observer(({ city }) => {
     const deleteRef = useRef();
 
     useEffect(() => {
+        //Set empty array for weather before fetching new weather data
         setWeather([]);
+
+        //Fetching weather data from OpneWeatherMap API
         const fetchData = async () => {
             try {
                 let response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&lang=${store.choosenLanguage}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`);
                 setWeather(response.data.list)
             } catch (error) {
                 store.setError({ message: `Cannot find city: ${city}!` });
-                store.addToErrorCities(city);
+                store.removeFromCities(city);
             }
         }
         fetchData();
     }, [units, city]);
     
     useEffect(() => {
+        //Set background color if temperature colder than 0°
         if (weather[0] && Math.round(weather[0].main.temp) <= 0) setBackgroundColor('#F1F2FF');
         else setBackgroundColor('#FFFAF1');
-        weather.length ? setImgSrc(`https://openweathermap.org/img/wn/${weather[0]?.weather[0]?.icon}@2x.png`) : console.log('Cannot set img src');
-        if (store.choosenLanguage === 'he' && weather.length) {
-            deleteRef.current.classList.remove('delete-city-card');
-            deleteRef.current.classList.add('delete-city-card-rtl');
-        }
+        //Set src attribute for img to fetch img of weather state from API
+        weather.length && setImgSrc(`https://openweathermap.org/img/wn/${weather[0]?.weather[0]?.icon}@2x.png`)
     }, [weather]);
 
     const deleteCity = () => {
         store.removeFromCities(city);
     }
 
-    if (store.errorCitiesIncludes(city)) return <></>;
-    else if (weather.length) return (
+    
+    if (weather.length) return (
         <div className='weather-card' style={{backgroundColor: backgroundColor}}>
             <span ref={deleteRef} className='delete-city-card' onClick={() => deleteCity()}>×</span>
             <MainInfo city={city} imgSrc={imgSrc} weather={weather} />
             <WeatherForecast weather={weather} />
             <WeatherDetails weather={weather} units={units} setUnits={setUnits} />
         </div>
-    ); else return (
+    );
+    //Set Tailspin animation while loading data
+    else return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '20rem', height: '10rem', margin: 20 }}>
             <TailSpin
                 visible={true}

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 const WeatherDetails = ({ weather, units, setUnits }) => {
     const unitsStyles = (unit) => unit !== units ? { fontSize: 22, marginLeft: 2, marginRight: 2, color: '#8D8D8D' } : { fontSize: 22, marginLeft: 2, marginRight: 2 };
-    const {i18n, t} = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <div className="weather-details">
@@ -11,9 +11,9 @@ const WeatherDetails = ({ weather, units, setUnits }) => {
                 <div className="temp-now">
                     <span style={{ fontSize: 44 }}>{Math.round(weather[0].main.temp)}</span>
                     <div className="units">
-                        <span style={unitsStyles('metric')} onClick={() => setUnits('metric')}>°C</span>
+                        <span style={{...unitsStyles('metric'), cursor: 'pointer'}} onClick={() => setUnits('metric')}>°C</span>
                         <span style={{ fontSize: 20 }}>|</span>
-                        <span style={unitsStyles('imperial')} onClick={() => setUnits('imperial')}>°F</span>
+                        <span style={{...unitsStyles('imperial'), cursor: 'pointer'}} onClick={() => setUnits('imperial')}>°F</span>
                     </div>
                 </div>
                 <div className="feels-like">

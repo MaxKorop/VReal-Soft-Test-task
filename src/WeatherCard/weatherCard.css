@@ -15,14 +15,6 @@
     cursor: pointer;
 }
 
-.delete-city-card-rtl {
-    position: absolute;
-    top: 2px;
-    left: 5px;
-    color: #C5C5C5;
-    cursor: pointer;
-}
-
 .weather-forecast {
     margin-left: 15px;
 }

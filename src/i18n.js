@@ -11,16 +11,46 @@ i18n.use(initReactI18next).init({
                 "humidity": 'Humidity',
                 "pressure": 'Pressure',
                 "feels": 'Feels like:',
-                "add": "Add"
+                "add": "Add",
+                "Thunderstorm": "Thunderstorm",
+                "Drizzle": "Drizzle",
+                "Rain": "Rain",
+                "Snow": "Snow",
+                "Mist": "Mist",
+                "Smoke": "Smoke",
+                "Haze": "Haze",
+                "Fog": "Fog",
+                "Sand": "Sand",
+                "Dust": "Dust",
+                "Ash": "Ash",
+                "Squall": "Squall",
+                "Tornado": "Tornado",
+                "Clear": "Clear",
+                "Clouds": "Clouds"
             }
         },
-        ua: {
+        uk: {
             translation: {
                 'wind': 'Вітер',
                 'humidity': 'Вологість',
                 'pressure': 'Тиск',
                 'feels': 'Відчувається як:',
-                "add": 'Додати'
+                "add": 'Додати',
+                "Thunderstorm": "Гроза",
+                "Drizzle": "Дощик",
+                "Rain": "Дощ",
+                "Snow": "Сніг",
+                "Mist": "Туман",
+                "Smoke": "Дим",
+                "Haze": "Серпанок",
+                "Fog": "Туман",
+                "Sand": "Пісок",
+                "Dust": "Пил",
+                "Ash": "Зола",
+                "Squall": "Шквал",
+                "Tornado": "Торнадо",
+                "Clear": "Чисто",
+                "Clouds": "Хмарно"
             }
         },
         he: {
@@ -29,7 +59,22 @@ i18n.use(initReactI18next).init({
                 'humidity': 'לחות',
                 'pressure': 'לַחַץ',
                 'feels': 'זה מרגיש כמו:',
-                "add": 'להוסיף'
+                "add": 'להוסיף',
+                "Thunderstorm": "סוּפַת רַעֲמִים",
+                "Drizzle": "זרזיף",
+                "Rain": "גֶשֶׁם",
+                "Snow": "שֶׁלֶג",
+                "Mist": "עֲרָפֶל",
+                "Smoke": "עָשָׁן",
+                "Haze": "עֲרָפֶל",
+                "Fog": "עֲרָפֶל",
+                "Sand": "חוֹל",
+                "Dust": "אָבָק",
+                "Ash": "אֵפֶר",
+                "Squall": "תְזָזִית",
+                "Tornado": "טוֹרנָדוֹ",
+                "Clear": "ברור",
+                "Clouds": "עננים"
             }
         }
     }

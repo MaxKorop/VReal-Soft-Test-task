@@ -12,6 +12,7 @@ const LanguageSelector = observer(() => {
     const { store } = useContext(Context);
 
     useEffect(() => {
+        //Get lng by default stored in localStorage
         const lng = localStorage.getItem('lng');
         if (lng) {
             i18n.changeLanguage(lng);
@@ -21,6 +22,7 @@ const LanguageSelector = observer(() => {
         }
     }, []);
 
+    //Change language and store it to localStorage
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
         store.setChoosenLanguage(lng);
@@ -30,6 +32,7 @@ const LanguageSelector = observer(() => {
         setChoosenLanguage(lng);
     }
 
+    //Show or hide language options
     const showOrHide = () => {
         setShow(prev => !prev);
     }

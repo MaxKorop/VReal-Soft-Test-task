@@ -10,7 +10,9 @@ const App = observer(() => {
   const { store } = useContext(Context);
 
   useEffect(() => {
+    // Set the value of an empty array to localstorage
     if (!localStorage.getItem('cities')) localStorage.setItem('cities', '[]');
+    //Check permissions for geolocation
     navigator.permissions.query({ name: 'geolocation' }).then(result => {
       if (result.state === 'granted') navigator.geolocation.getCurrentPosition(getCity, err => console.log(err), { maximumAge: Infinity });
       else if (result.state === 'prompt') navigator.geolocation.getCurrentPosition(getCity, err => console.log(err), { maximumAge: Infinity });
@@ -18,6 +20,7 @@ const App = observer(() => {
     });
   }, []);
 
+  //Get city name for latitude and longitude of user from
   const getCity = async (position) => {
     try {
       const latitude = position.coords.latitude;
@@ -36,7 +39,6 @@ const App = observer(() => {
           return true;
         });
       }
-      console.log(cityName);
       store.addToCities(cityName);
     } catch (error) {
       console.log(error);

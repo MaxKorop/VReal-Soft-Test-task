@@ -15,7 +15,7 @@ const LanguageOptions = observer(({ changeLanguage }) => {
     return (
         <div ref={optionsRef} className='language-options'>
             <span className='lang' onClick={() => changeLanguage('en')}>EN</span>
-            <span className='lang' onClick={() => changeLanguage('ua')}>UA</span>
+            <span className='lang' onClick={() => changeLanguage('uk')}>UK</span>
             <span className='lang' onClick={() => changeLanguage('he')}>HE</span>
         </div>
     );
